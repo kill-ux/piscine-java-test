@@ -1,7 +1,12 @@
 #!/bin/sh
 
 set -e
-sudo rm -r project/*
+if [ -d "project" ]; then
+   sudo rm -r project/*
+else
+    echo "Directory 'project' does not exist yet."
+fi
+
 mkdir -p project/src/main/java
 mkdir -p project/src/test/java
 
