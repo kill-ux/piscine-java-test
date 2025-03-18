@@ -2,7 +2,7 @@
 
 set -e
 if [ -d "project" ]; then
-   sudo rm -r project/*
+   sudo rm -r project/src/main/java
 else
     echo "Directory 'project' does not exist yet."
 fi
