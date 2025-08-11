@@ -2,7 +2,7 @@
 
 set -e
 if [ -d "project" ]; then
-   sudo rm -r project/src/main/java
+    rm -r project/src/main/java
 else
     echo "Directory 'project' does not exist yet."
 fi
@@ -17,12 +17,14 @@ CODE_EDITOR_MODE="${CODE_EDITOR_MODE:-$EXAM_MODE}"
 
 
 if [ -z "$EDITOR_FILES" ]; then
-    cp -rf "./student/${EXERCISE}/"*.java ./project/src/main/java
+    cp -rf "/home/muboutoub/piscine-java/${EXERCISE}/"*.java /home/muboutoub/piscine-java-test/project/src/main/java
 else
-    cd ./student/
-    cp -rf $(echo $EDITOR_FILES | tr ',' ' ') ../project/src/main/java
+    cd /home/muboutoub/piscine-java/
+    cp -rf $(echo $EDITOR_FILES | tr ',' ' ') /home/muboutoub/piscine-java-test/project/src/main/java
     cd -
 fi
+
+cd /home/muboutoub/piscine-java-test
 
 cp -rf "./tests/StopAfterFailureExtension.java" ./project/src/main/java
 
